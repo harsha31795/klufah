@@ -223,12 +223,6 @@
   top: 0;
   z-index: 0;
 }
-.rs-team#rs-team3.bg4:after {
-  background-image: url(images/bg/bg1.jpg);
-}
-.rs-team#rs-team3.bg6:after {
-  background-image: url(images/bg/bg6.jpg);
-}
 .rs-team#rs-team3 .container-fullwidth {
   position: relative;
   z-index: 1;
