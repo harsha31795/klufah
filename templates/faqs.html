@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-Faqs {% endblock %}
+{% if user.is_authenticated %}
+{% block touchactive %}active{% endblock %}
+{% else %}
+{% block toucactive %}active{% endblock %}
+{% endif %}
+{% block css %}
+  <link href="{% static 'assets/css/faqs.css' %}" rel="stylesheet">
+
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity=
+"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity=
+"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+      
+    <script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity=
+"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous">
+    </script>
+    {% endblock %}
+
+{% block content%}
+
+  <main id="main">
+
+    
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>Faq's</li>
+        </ol>
+        <h2>Faq's</h2>
+      </div>
+    </section>
+            
+    <div class="container">
+        <div class="" id="accordion">
+            <div class="faqHeader">FAQ About FAH-Event Management Company</div>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What services do you offer?</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="card-block">
+                        We offer a <strong>event planning service</strong>. We’re able to find venues, organise catering, décor, accommodation, staffing, equipment and even hire speakers for <strong>corporate events</strong>. 
+                        We offer a tailor made service to fit your requirements. <strong> event is unique</strong> and we have the capacity to fulfill your requirements from start to finish. 
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">How Often Will We Meet?</a>
+                    </h4>
+                </div>
+                <div id="collapseTen" class="panel-collapse collapse">
+                    <div class="card-block">
+                        This is ideally answered at our initial meeting. We will build a schedule until we know what you want your event to be like. 
+                        We'll come up with an estimation for the total number of gatherings and time needed during the meeting to help you stay on track with your budget.
+                </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">How Do You Select Your Event Vendors?</a>
+                    </h4>
+                </div>
+                <div id="collapseEleven" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Along with our considerable experience with event organising and several other activities, we have developed strong relationships with a number of high-quality vendors in Coimbatore.
+                         A big part of our work is reviewing each vendor and making sure they're the best in their sectors and have all of the necessary approvals.
+                          We really like to partner with suppliers that are enjoyable to work with, as we think it helps the whole planning process go more seamlessly.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faqHeader"></div>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Do You Provide Last Minute Event Management Services?</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Yes, is the simple answer? we are entirely comfortable functioning in a high-stress, last-minute environment, so don't hesitate to contact us if you need to organize a last-minute event. 
+                        We'll let you know if it's not practical, but our motto is that "there's always a way."
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Can I Just Get Your Help With One Aspect Of My Event?</a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Well, truly! We can manage all types of an event or include only the facilities you need for a specific event.
+                         Venue finding, onsite event management, event registration, event managed services, team bonding events, executive training sessions, and several other resources are available.
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">What are your areas of expertise?</a>
+                    </h4>
+                </div>
+                <div id="collapseFive" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We work from start to finish on both commercial and personal events. 
+                        These range from product launches, <strong>conferences</strong> and company award evenings to celebratory birthday, <strong>weddings and anniversary</strong> events. 
+                        We’ve worked across all business sectors and are happy to provide references and testimonials.
+                        <br />
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">What are your fees?</a>
+                    </h4>
+                </div>
+                <div id="collapseSix" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We will discuss all your event requirements before giving a quotation as obviously fees charged will depend on the scale and nature of the event, complexity of planning and our level of involvement. 
+                        We’ll keep in contact with you regarding our time, hours spent, and liaise with you on specific items, but we’ll also work to your budget and plan accordingly. 
+                        You’ll never be charged more than we agree upon and there will be no hidden extras or surprises.
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">What are the payment options?</a>
+                    </h4>
+                </div>
+                <div id="collapseEight" class="panel-collapse collapse">
+                    <div class="card-block">
+                        The best way to transfer funds is via Paypal. This secure platform ensures timely payments and a secure environment. 
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Can you cope with last minute changes of plan or emergency situations?</a>
+                    </h4>
+                </div>
+                <div id="collapseNine" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We have extensive experience in dealing with the unexpected. We build in contingency measures for all our events and are constantly formulating plans to cope with emergency situations. Rest assured your event is always in the most capable hands.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faqHeader"></div>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">How early do we need to start planning an event?</a>
+                    </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="card-block">
+                        Whilst this obviously depends on the size and nature of the event, we’d always advise you to start putting plans in place as early as possible.
+                         At certain times of year certain venues may need to be booked well in advance, as too with reputable suppliers and vendors.
+                          We advise handing over the reins to an event planner as soon as you’re aware of an event to be planned. 
+                          This gives us adequate time to factor in back up plans as well as leaving ample time to negotiate, plan and ensure everything’s in place for your big day. 
+                    </div>
+                </div>
+            </div><br>
+            <div class="card ">
+                <div class="card-header">
+                    <h4 class="card-header">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">How do you keep budgets on track?</a>
+                    </h4>
+                </div>
+                <div id="collapseSeven" class="panel-collapse collapse">
+                    <div class="card-block">
+                        We are meticulous about keeping track of everything we need to spend money on. This is done by constant monitoring and updating <strong>spreadsheets</strong>, knowing where to prioritise spending and keeping aside a budget to cater for emergency contingencies.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  <br><br>{% endblock %}

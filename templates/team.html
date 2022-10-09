@@ -1,0 +1,316 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-Team{% endblock %}
+
+{% if user.is_authenticated %}
+{% block touchactive %}active{% endblock %}
+{% else %}
+{% block toucactive %}active{% endblock %}
+{% endif %}
+
+{% block css %} <link href="{% static 'assets/css/team.css' %}" rel="stylesheet"> {% endblock %}
+{% block content %}
+  <main id="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>Team</li>
+        </ol>
+        <h2>Team</h2>
+      </div>
+    </section>
+
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div id="rs-team" class="rs-team fullwidth-team pt-100 pb-70">
+    <div class="container">
+       <div class="row">
+            <div class="col d-flex justify-content-center " >
+                <div class="team-item" >
+                    <div class="team-img" >
+                        <img src="{% static 'assets/img/team/har.jpeg' %}" alt="team Image" height="500px" class="class="img-responsive center-block d-block mx-auto"">
+                        <div class="normal-text">
+                            <h4 class="team-name">HARSHA SAI</h4>
+                            <span class="subtitle">CEO &amp; Founder</span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">HARSHA SAI</a>
+                                    </h4>
+                                    <span class="postion">CEO &amp; Founder</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="{% static 'assets/img/team/sam.jpeg' %}" alt="team Image" height="500px">
+                        <div class="normal-text">
+                            <h4 class="team-name">SAMEER</h4>
+                            <span class="subtitle">CREATIVE &amp; DIRECTOR</span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">SAMEER</a>
+                                    </h4>
+                                    <span class="postion">CREATIVE &amp; DIRECTOR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="{% static 'assets/img/team/fath.jpeg' %}" alt="team Image" height="500px">
+                        <div class="normal-text">
+                            <h4 class="team-name">FATHIMA</h4>
+                            <span class="subtitle">TRESASURY &amp; DESIGNING</span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">FATHIMA</a>
+                                    </h4>
+                                    <span class="postion">TRESASURY &amp; DESIGNING</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="{% static 'assets/img/team/shi.jpeg' %}" alt="team Image" height="500px">
+                        <div class="normal-text">
+                            <h4 class="team-name">SHIVA</h4>
+                            <span class="subtitle">STAGE MANAGEMENT</span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">SHIVA</a>
+                                    </h4>
+                                    <span class="postion">STAGE MANAGEMENT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="{% static 'assets/img/team/jay.jpeg' %}" alt="team Image" height="500px">
+                        <div class="normal-text">
+                            <h4 class="team-name">JETREYA</h4>
+                            <span class="subtitle">ORGANIZER &amp; CARE TAKER </span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">JETREYA</a>
+                                    </h4>
+                                    <span class="postion"> ORGANIZER &amp; CARE TAKER</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="{% static 'assets/img/team/tej.jpeg' %}" alt="team Image" height="500px">
+                        <div class="normal-text">
+                            <h4 class="team-name">TEJA</h4>
+                            <span class="subtitle">LEGAL ADVISOR</span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">TEJA</a>
+                                    </h4>
+                                    <span class="postion">LEGAL ADVISOR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="{% static 'assets/img/team/dha.jpeg' %}" alt="team Image" height="500px">
+                        <div class="normal-text">
+                            <h4 class="team-name">DHANUSHA</h4>
+                            <span class="subtitle">Hospitality</span>
+                        </div>
+                    </div>
+                    <div class="team-content">
+                        <div class="display-table">
+                            <div class="display-table-cell">
+                                <div class="share-icons">
+                                    <div class="border"></div>
+                                    <ul class="team-social icons-1">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                    </ul>
+
+                                    <ul class="team-social icons-2">
+                                        <li><a href="#" class="social-icon"><i class="fa fa-skype"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="team-details">
+                                    <h4 class="team-name">
+                                        <a href="#">DHANUSHA</a>
+                                    </h4>
+                                    <span class="postion">Hospitality</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                  
+
+        </div>
+    </div>
+    
+</div>
+
+  </main>
+
+  
+  {% endblock %}

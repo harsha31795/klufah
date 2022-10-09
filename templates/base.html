@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %} {% endblock %}</title>
+  <meta name="description" content=" &amp; Compare with fee, services &amp; Discounts they are offering. Check Wedding Planning Services with Atevents">
+  <meta name="keywords" content="Event Planners Vijayawada, Wedding Planners in Vijayawada, Birthday ,Planners cermony Vijayawada, newyear Planners wedding Vijayawada">
+  <meta name="robots" content="all">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="pbdate" content="8:04:53 25/01/2022">
+
+  <link href="{% static 'assets/img/favico.png' %}" rel="icon">
+  <link href="{% static 'assets/img/favico.png' %}" rel="apple-touch-icon">
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  {% block css %}{% endblock %}
+</head>
+
+<body>
+
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" >
+      <strong>message:</strong>{{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+   </button>
+  </div>
+  {% endfor %}
+  
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:fahevents@gmail.com">fahevents@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 80081 52458</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="https://twitter.com/login?lang=en" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/signup" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div >
+        <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo1.png' %}" alt="logo" height="26%" width="26%"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="{% block homeactive %}{% endblock %}" href="{% url 'index' %}">Home</a></li>
+          {% if user.is_authenticated %}
+
+          <li class="dropdown"><a class="{% block mainactive %}{% endblock %}" href=""><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'password_change' %}">Change password</a></li>
+
+              <li><a href="{% url 'about' %}">About</a></li>
+              <li><a href="{% url 'services' %}">Services</a></li>
+              <li><a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+          </li>
+         
+          <li class="dropdown"><a class="{% block touchactive %}{% endblock %}" href=""><span>Get in Touch</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'team' %}">FAH-Team</a></li>
+              <li><a href="{% url 'terms' %}">Privacy/Refund policy</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+            </ul>
+          </li>
+          <li><a class="{% block dashactive %}{% endblock %}" href="{% url 'dashboard' %}">Book-Event</a></li>
+          <li><a class="{% block myeventsactive %}{% endblock %}" href="{% url 'myevents' %}">Myevents</a></li>
+          <li><a class="{% block profileactive %}{% endblock %}" href="{% url 'profile' %}">Profile</a></li>
+          <li><a class="{% block signoutactive %}{% endblock %}" href="{% url 'signout' %}">Signout</a></li>
+          
+
+      <h1><li><a class="{% block profile %}{% endblock %}" href="{% url 'profile' %}">Hello {{request.user.first_name}} !!!</a></li></h1>
+
+        {% else %}
+          <li><a class="{% block aboutactive %}{% endblock %}" href="{% url 'about' %}">About</a></li>
+          <li><a class="{% block servicesactive %}{% endblock %}" href="{% url 'services' %}">Services</a></li>
+          <li><a class="{% block galleryactive %}{% endblock %}" href="{% url 'gallery' %}">Gallery</a></li>
+          <li class="dropdown"><a class="{% block toucactive %}{% endblock %}" href=""><span>Get in Touch</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'team' %}">FAH-Team</a></li>
+              <li><a href="{% url 'terms' %}">Privacy/Refund policy</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+              <li><a href="{% url 'faqs' %}">FAQ's</a></li>
+            </ul>
+          </li>
+          <li><a class="{% block signupactive %}{% endblock %}" href="{% url 'signup' %}">Sign-Up</a></li>
+          <li><a class="{% block signinactive %}{% endblock %}" href="{% url 'signin' %}">Login</a></li>
+          {% endif %}
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  {% block content %} {% endblock %}
+  
+  <footer id="footer">
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Our Newsletter</h4>
+            <p>Get the Updates of our prices and events subscribe:</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="{% url 'new' %}" method="post">
+              {% csrf_token %}
+              <input type="email" name="email"><input type="submit" value="Subscribe" style="width: 30%;">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'gallery' %}">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Get in Touch</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'team' %}">FAH-Team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'terms' %}">Privacy/refund policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'faqs' %}">FAQ's</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              24-89, manipuram bridge down <br>
+              Guntur, (Dist.) 522001<br>
+              INDIA. <br><br>
+              <strong>Phone:</strong> +91 80081 52458<br>
+              <strong>Email:</strong><a href="mailto:fahevents@gmail.com"> fahevents@gmail.com</a><br>
+              <strong>Whatsapp:</strong><a href="https://api.whatsapp.com/send/?phone=%2B918008152458&text&app_absent=0" target="blank">Chat Here</a><br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About FAH-events</h3>
+            <p style="text-align:justify">To keep our promise of consistently delivering the best, we have made sure that our team of staff are composed of only trained of the purpose professionals that are ready and able to assist you with all your need-from the preparation phase to the end of the event. Furthermore, to continue to achieve our goals,Rest assured, if you hire us today you won't be disappointed.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/login?lang=en" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.skype.com/en/" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com/signup" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>FAH-Events</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://google.com/">Pooja Developers&#129313;</a>
+      </div>
+    </div>
+    
+  </footer>
+  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+  {% block javascript %} {% endblock %}
+</body>
+
+</html>

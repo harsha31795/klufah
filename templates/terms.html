@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-Terms{% endblock %}
+{% if user.is_authenticated %}
+{% block touchactive %}active{% endblock %}
+{% else %}
+{% block toucactive %}active{% endblock %}
+{% endif %}
+{% block css %} <link href="{% static 'assets/css/team.css' %}" rel="stylesheet"> 
+  <link href="{% static 'assets/css/terms.css' %}" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity=
+"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous">
+</script>
+
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity=
+"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous">
+</script>
+
+<script src=
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity=
+"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous">
+</script>
+
+{% endblock %}
+{% block content %}
+  <main id="main">
+    
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>Terms</li>
+        </ol>
+        <h2>Terms</h2>
+      </div>
+    </section>
+             
+    
+<div class="faq_area section_padding_130" id="faq">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-8 col-lg-6">
+                
+                <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <h3><span>Privacy </span> policy</h3>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            
+            <div class="col-12 col-sm-10 col-lg-8">
+                <div class="accordion faq-accordian" id="faqAccordion">
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingOne">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Introduction<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>EventManagerBlog.com or EventMB is owned and operated by Skift, Inc. This privacy policy and Terms of Use set out the basis on which any personal data that we have collected about you, or that you provide to us, will be processed by us. Please read the following carefully to understand our views and practices regarding your personal data and how we will treat it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingTwo">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Collecting personal data and When we collect it<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>You are not legally obligated to provide us Personal Data and may do so at your own free will. If you do not agree to provide us with such data or have it processed by us or any of our authorized third parties or service providers, please simply do not enter our Sites or use our Service. We reserve the right to change this Privacy Policy at any time at our discretion. Such change will be effective seven (7) days following posting of the revised Privacy Policy on the Sites, and your continued use of the Service thereafter means that you accept those changes. For changes affecting opt-ins you will be asked to expressly give your consent.</p>
+                            <p>We receive and collect Personal Data from your browser or mobile device about your use of the Sites and Service. We use log files and analytics tools to analyze trends, administer the Sites and Service, track users’ movement around the Sites and Service, and gather statistical data. We use “cookies”, technical identifiers and Pixels in order to provide and enhance our Sites and Service. We also collect limited data regarding your system and device, such as your mobile device id or browser preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingThree">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">How we use your personal data<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>Personal information submitted to us through our Sites and resources, including digital publications and webinars, will be used for the purposes specified in this policy or on the relevant pages of the websites or individual resources.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingfour">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">Disclosing personal information<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapsefour" aria-labelledby="headingfour" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>You are not legally obligated to provide us Personal Data and may do so at your own free will. If you do not agree to provide us with such data or have it processed by us or any of our authorized third parties or service providers, please simply do not enter our Sites or use our Service. We reserve the right to change this Privacy Policy at any time at our discretion. Such change will be effective seven (7) days following posting of the revised Privacy Policy on the Sites, and your continued use of the Service thereafter means that you accept those changes. For changes affecting opt-ins you will be asked to expressly give your consent.</p>
+                            <p>We receive and collect Personal Data from your browser or mobile device about your use of the Sites and Service. We use log files and analytics tools to analyze trends, administer the Sites and Service, track users’ movement around the Sites and Service, and gather statistical data. We use “cookies”, technical identifiers and Pixels in order to provide and enhance our Sites and Service. We also collect limited data regarding your system and device, such as your mobile device id or browser preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                        <div class="card-header" id="headingfive">
+                            <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive"> Children’s Privacy<span class="lni-chevron-up"></span></h6>
+                        </div>
+                        <div class="collapse" id="collapsefive" aria-labelledby="headingfive" data-parent="#faqAccordion">
+                            <div class="card-body">
+                                <p>Our Sites and services are not structured to attract children under the age of 16, and we do not intend to collect Personal Data from anyone we know to be under 16. If we learn that we have collected Personal Data from anyone under 16 years, we will delete that information as quickly as possible. If you believe that we might have any such information, please contact us a</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+ 
+  <br><br>{% endblock %}

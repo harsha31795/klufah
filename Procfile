@@ -1,0 +1,1 @@
+web: gunicorn Atevents.wsgi --log-file -

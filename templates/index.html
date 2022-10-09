@@ -1,0 +1,158 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-HOME {% endblock %}
+{% block homeactive %}active{% endblock %}
+{% block content%}
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          
+          <div class="carousel-item active" style="background: url(../static/assets/img/slide/runn.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>FAH-Events</span></h2>
+                <p class="animate__animated animate__fadeInUp"><b>Are you planning a wedding,a dinner event,a concert or another type of event in the local area? FAH-Event Management we are ready to help you with your event management from start to finish.please feel free to contact us through our booking form.</b></p>
+                <a href="{% url 'about' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="carousel-item" style="background: url(../static/assets/img/slide/walll.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated fanimate__adeInDown">Our <span>Management </span>Team </h2>
+                <p class="animate__animated animate__fadeInUp"><b>To keep our promise of consistently delivering the best, we have made sure that our team of staff are composed of only trained of the professionals that are ready and able to assist you with all your need-from the preparation phase to the end of the event. Furthermore, to continue to achieve our goals,Rest assured, if you hire us today you won't be disappointed.</b></p>
+                <a href="{% url 'team' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="carousel-item" style="background: url(../static/assets/img/slide/war2.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown">Achievements <span> and </span> movements</h2>
+                <p class="animate__animated animate__fadeInUp"><b>You can see our Achievements and movements we had captured during the events and what we have made for the Events and concerts functions so on.You can see more about our events in out page of content.You can click and view our gallery page for futher details.</b> </p>
+                <a href="{% url 'gallery' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    
+    <section id="featured" class="featured">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="icon-box">
+              <i class="bi bi-emoji-smile"></i>
+              <h3><a href="{% url 'services' %}">Services</a></h3>
+              <p>Event management services team works with you from the beginning stages of planning your event to the live event and post-event reconciliation. Whether you are planning a virtual event, hybrid, or an in-person meeting, we have a strong and experienced team to bring your event to life.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="bi bi-envelope-fill"></i>
+              <h3><a href="{% url 'contact' %}">Contact</a></h3>
+              <p>On its contact page, offers three email addresses to contact the company. The first is for general inquiries, the second is for order inquiries, and the last one is for stock and wholesales inquiries. This gives visitors a specific resource to reach out to depending on the question they may have for the company.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="bi bi-chat-left-text-fill"></i>
+              <h3><a href="{% url 'faqs' %}">FAQ's</a></h3>
+              <p>On its page, We provides visitors with four ways to contact its support team. There are also FAQ links featured at the top of the page that can help users find information without having to reach out to customer service. This creates an ideal balance where visitors have plenty of self-service resources as well direct options for contacting Ulta customer support.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'assets/img/event.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <h3>What Does an Event Management Company Do?</h3>
+            <p class="fst-italic">
+              Running a successful event can be a complex and expensive exercise where the planning and management of every detail counts towards its success, which is reason alone to hire a specialist company. With this in mind, these are our top 6 reasons to use a professional event management company
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Creative Ideas.</li>
+              <li><i class="bi bi-check-circle"></i> Save Time and Money.</li>
+              <li><i class="bi bi-check-circle"></i> Access to Technology.</li>
+              <li><i class="bi bi-check-circle"></i> Manage Risk.</li>
+              <li><i class="bi bi-check-circle"></i> Professional Event Delivery.</li>
+              <li><i class="bi bi-check-circle"></i> Manage Your Budget .</li>
+            </ul>
+            <p>
+              he application of project management to the creation and development of large-scale events such as festivals, 
+              conferences, ceremonies, weddings, formal parties, concerts and conventions" which sounds reasonable if a little 
+              long-winded. Putting it more simply event management 
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>OUR Clients</h2>
+          <p style="text-align:justify">Many of the top companies are taken the our pride of our events and they became as our clients by giving Many of the events to conduct on behalf of them and we made it.some of them are given below:</p>
+        </div>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/1.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/2.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/3.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/4.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/5.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/6.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/7.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/8.jpg' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+      
+    </section>
+  </main>
+  <a href="https://api.whatsapp.com/send/?phone=%2B918008152458&text&app_absent=0" target="_blank" style="position:fixed; bottom: 55px; right: 0px; text-align: center; z-index: 100; margin-left: 1335px;">
+    <img src="{% static 'assets/img/what.png' %}" width="180" height="65" >
+    </a>
+  
+ {% endblock %}

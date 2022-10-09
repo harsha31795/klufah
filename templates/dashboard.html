@@ -1,0 +1,408 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-Dashboard {% endblock %}
+{% block dashactive %}active{% endblock %}
+{% block css %}
+<link href="{% static 'assets/css/dashboa.css' %}" rel="stylesheet">
+<script src="{% static 'assets/js/dashboard.js' %}" defer></script>
+{% endblock %}
+
+  {% block content%}
+
+  <main id="main">
+
+   
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>Book-Event</li>
+        </ol>
+        <h2>Book-Event</h2>
+      </div>
+    </section>
+
+    <section>
+      <form action="{% url 'dashboard' %}" method="post" class="form">
+        {% csrf_token %}
+        <h1 class="text-center">Book a Event</h1>
+        <!-- Progress bar -->
+        <div class="progressbar">
+          <div class="progress" id="progress"></div>
+          
+          <div 
+            class="progress-step progress-step-active"
+            data-title="Details"
+          ></div>
+          <div class="progress-step" data-title="Event-details"></div>
+          <div class="progress-step" data-title="Event-Estimation"></div>
+          
+          
+        </div>
+  
+        <!-- Steps -->
+
+        <!-- Details -->
+        <div class="form-step form-step-active">
+          <div class="input-group">
+            <label for="name">Name :</label>
+            <input type="text" name="name" id="name"/>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email"/>
+          </div>
+
+          <div class="input-group">
+            <label for="age">Age :</label>
+            <input type="number" name="age" id="age" min="0" max="100"/>
+          </div>
+
+          <div class="input-group">
+            <label for="phone">Phone : (9999999999)</label>
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{10}"/>
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="gender">Gender :</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="gender" id="Male" value="Male"/>
+              <label class="form-check-label" for="Male">Male</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input type="radio" name="gender" id="Female" value="Female"/>
+              <label class="form-check-label" for="Female">Female</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input type="radio" name="gender" id="Others" value="Others"/>
+              <label class="form-check-label" for="Others">Others</label>
+            </div>
+
+          </div>
+
+
+           <div class="input-group">
+              <label for="state">State : &nbsp;&nbsp;</label>
+              <select class="form-select form-select-sm" name="state" id="state" onchange="cities(this.id,'city')">
+                <option value="null" selected disabled="true">Choose a option</option>
+                <option value="Andhra pradesh">Andhra pradesh</option>
+                <option value="Telengana">Telengana</option>
+                <option value="Chennai">Chennai</option>
+              </select>
+            </div>
+  
+            <div class="input-group">
+              <label for="state">City : &nbsp;&nbsp;</label>
+              <select class="form-select form-select-sm" name="city" id="city" onchange="venuestype(this.id,'venues')">
+                <option selected disabled="true">Choose a State</option>
+                
+              </select>
+            </div>
+
+
+          <div class="">
+            <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+          </div>
+        </div>
+
+<!-- Details End -->
+
+
+<!-- Events Types -->
+        <div class="form-step">
+
+          <div class="input-group">
+            <label for="event">Event Type : &nbsp;&nbsp;</label>
+            <select class="form-select form-select-sm" name="event" id="event">
+              <option selected disabled="true">select event type</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Birthday">Birthday</option>
+              <option value="Product Launch">Product Launch</option>
+              <option value="Branding Promotions">Branding Promotions</option>
+              <option value="Animal events">Animal events</option>
+              <option value="Sports">Sports</option>
+              <option value="Conferences">Conferences</option>
+              <option value="Parties">Parties</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="venues">Venue Name : &nbsp;&nbsp;</label>
+            <select class="form-select form-select-sm" name="venues" id="venues">
+              <option selected disabled="true">Choose a Venue name</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+
+            <label for="acnonac">Ac/Non-Ac :</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="acnonac" id="Ac" value="Ac"/>
+              <label class="form-check-label" for="Ac">Ac</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input type="radio" name="acnonac" id="Non-Ac" value="Non-Ac"/>
+              <label class="form-check-label" for="Non-Ac">Non-Ac</label>
+            </div>
+
+          </div>
+
+          <div class="input-group">
+
+            <label for="music">Music System :</label>
+            <div class="form-check form-check-inline">
+              <input type="radio" name="music" id="Yes" value="Yes"/>
+              <label class="form-check-label" for="Yes">Yes</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input type="radio" name="music" id="No" value="No"/>
+              <label class="form-check-label" for="No">No</label>
+            </div>
+
+          </div>
+
+         
+
+
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <a href="#" class="btn btn-next">Next</a>
+          </div>
+        </div>
+
+<!-- Events type end -->
+
+
+        <div class="form-step">
+
+          <div class="input-group">
+            <label for="decorations">Decorations : &nbsp;&nbsp;</label>
+            <select class="form-select form-select-sm" name="decorations" id="decorations">
+              <option selected disabled="true">select Decorationss</option>
+              <option value="Flower Decorations">Flower Decorations</option>
+              <option value="Ballon Decorations">Ballon Decorations</option>
+              <option value="Party Decorations">Party Decorations</option>
+              <option value="Anniversary Decorations">Anniversary Decorations</option>
+              <option value="Wedding Decorations">Wedding Decorations</option>
+              <option value="Birthday Decorations">Birthday Decorations</option>
+              <option value="Stage-Concet Decorations">Stage-Concet Decorations</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="estimation">Estimation Members : &nbsp;&nbsp;</label>
+            <select class="form-select form-select-sm" name="estimation" id="estimation">
+              <option selected disabled="true">select Estimations</option>
+              <option value="250">250</option>
+              <option value="500">500</option>
+              <option value="750">750</option>
+              <option value="1000">1000</option>
+              <option value="1250">1250</option>
+              <option value="1500">1500</option>
+              <option value="1750">1750</option>
+              <option value="2000">2000</option>
+            </select>
+          </div>
+
+
+          <div class="input-group">
+            <label for="food">Food Type : &nbsp;&nbsp;</label>
+            <select class="form-select form-select-sm" name="food" id="food" onchange="platefood(this.id,'plate')">
+              <option selected disabled="true">select food type</option>
+              <option value="VEG">VEG</option>
+              <option value="NONVEG">NONVEG</option>
+              <option value="VEG+NONVEG">VEG+NONVEG</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="food">Plate type : &nbsp;&nbsp;</label>
+            <select class="form-select form-select-sm" name="plate" id="plate">
+              <option selected disabled="true">Choose type of food</option>
+              
+            </select>
+          </div>
+
+
+          <div class="input-group">
+            <label for="doe">Date of Event : &nbsp;&nbsp;</label>
+            <input type="date" name="doe" id="dateControl"/>
+          </div>
+
+          <div class="btns-group">
+            <a href="#" class="btn btn-prev">Previous</a>
+            <input type="submit" value="Submit" class="btn" />
+          </div>
+
+        </div>
+        
+      </form>
+
+    </section>
+
+  </main>
+
+
+
+  {% block javascript %}
+  <script>
+function cities(s1,s2)
+{
+  var s1=document.getElementById(s1)
+  var s2=document.getElementById(s2)
+
+  s2.innerHTML="";
+  if(s1.value == "Andhra pradesh")
+  {
+    var optionArray=['select the city | select the city','Vijayawada|Vijayawada','Guntur|Guntur','Eluru|Eluru'];
+  }
+  else if(s1.value=="Telengana")
+  {
+    var optionArray=['select the city | select the city','Hyd|Hyd','secendrabad|secendrabad'];
+  }
+  else if(s1.value=="Chennai")
+  {
+    var optionArray=['select the city | select the city','Chennai|Chennai'];
+  }
+  else if(s1.value=="null")
+  {
+    var optionArray=['select the state |choose the state '];
+  }
+
+  for(var option in optionArray)
+  {
+    var pair=optionArray[option].split("|");
+    var newoption=document.createElement("option");
+
+    newoption.value=pair[0];
+    newoption.innerHTML=pair[0];
+    s2.options.add(newoption);
+  }
+
+}
+
+function venuestype(s1,s2)
+{
+  var s1=document.getElementById(s1)
+  var s2=document.getElementById(s2)
+  
+  s2.innerHTML="";
+  if(s1.value == "Vijayawada")
+  {
+    var optionArray=['null | select the Place',
+                     'Continental Park Hotel|Continental Park Hotel','Red Fox Hotel | Red Fox Hotel','Gateway Hotel | Gateway Hotel',
+                     'Red Green Grounds | Red Green Grounds','Vajra Ground | Vajra Ground','Stella Grounds | Stella Grounds',
+                     'Amaravati Conventions | Amaravati Conventions','Jyothi Convention | Jyothi Convention','Sitara Convention Hall | Sitara Convention Hall'];
+  }
+  else if(s1.value=="Guntur")
+  {
+    var optionArray=['null | select the Place',
+                     'AISHWARYA GRAND | AISHWARYA GRAND','Hotel Jaya Fortune | Hotel Jaya Fortune','Hotel Viceroy | Hotel Viceroy',
+                     'WePlay Grounds | WePlay Grounds','Hit & Run Ground | Hit & Run Ground','Area 45 Grounds | Area 45 Grounds',
+                     'MNR Convention | MNR Convention','Suvarna Convention | Suvarna Convention','Subham Convention | Subham Convention'];
+  }
+  else if(s1.value=="Eluru")
+  {
+    var optionArray=['null | select the Place',
+                     'Hotel Adithya  | Hotel Adithya ','Hotel Grand Arya | Hotel Grand Arya','Hotel Akshaya | Hotel Akshaya',
+                     'Helapuri Ground | Helapuri Ground','Netaji Grounds | Netaji Grounds','Razia Grounds | Razia Grounds',
+                     'Sree Convention | Sree Convention','Ambika Convention | Ambika Convention','Crystal Convention | Crystal Convention'];
+  }
+  else if(s1.value=="Hyd")
+  {
+    var optionArray=['null | select the Place',
+                     'Hotel The Manohar | Hotel The Manohar','Hotel Taj Banjara | Hotel Taj Banjara','Royalton Hotel | Royalton Hotel',
+                     'HMDA GROUNDS | HMDA GROUNDS','Wills Ground | Wills Ground','Idgah Ground | Idgah Ground',
+                     'JRC Conventions | JRC Convention','Anvaya Conventions | Anvaya Convention','Veda Convention | Veda Convention'];
+  }
+  else if(s1.value=="secendrabad")
+  {
+    var optionArray=['null | select the Place',
+                     'Hotel Parklane | Hotel Parklane','Hotel Maya Deluxe | Hotel Maya Deluxe','WELKIN HOTEL | WELKIN HOTEL',
+                     'Gymkhana GROUNDS | Gymkhana GROUNDS','Trimulgherry Ground | Trimulgherry Ground','V&V Arena Ground | V&V Arena Ground',
+                     'Samala Convention | Samala Convention','Rajha Conventions | Rajha Convention','Ragi Convention | Ragi Convention'];
+  }
+  else if(s1.value=="Chennai")
+  {
+    var optionArray=['null | select the Place',
+                     'The Leela Palace | The Leela Palace','Royal Palace Marina | Royal Palace Marina','Taj Coromandel | Taj Coromandel',
+                     'Somasundaram Ground | Somasundaram Ground','Raising 11 ground | Raising 11 ground','Aspiran Ground | Aspiran Ground',
+                     'Geetha Citadel Convention | Geetha Citadel Convention','Marigold Conventions | Marigold Convention','Kailash Convention | Kailash Convention'];
+  }
+
+  for(var option in optionArray)
+  {
+    var pair=optionArray[option].split("|");
+    var newoption=document.createElement("option");
+
+    newoption.value=pair[0];
+    newoption.innerHTML=pair[1];
+    s2.options.add(newoption);
+  }
+
+}
+
+
+function platefood(s1,s2)
+{
+  var s1=document.getElementById(s1)
+  var s2=document.getElementById(s2)
+
+  s2.innerHTML="";
+  if(s1.value == "VEG")
+  {
+    var optionArray=['select the plate | select the plate','Royal veg plate|Royal veg plate','Normal veg plate |Normal veg plate','Platinum veg plate |Platinum veg plate'];
+  }
+  else if(s1.value=="NONVEG")
+  {
+    var optionArray=['select the plate | select the plate','Royal nonveg plate|Royal nonveg plate','Normal nonveg plate |Normal nonveg plate','Platinum nonveg plate |Platinum nonveg plate'];
+  }
+  else if(s1.value=="VEG+NONVEG")
+  {
+    var optionArray=['select the plate | select the plate','Royal plate|Royal plate','Normal plate |Normal plate','Platinum plate |Platinum plate'];
+  }
+
+  for(var option in optionArray)
+  {
+    var pair=optionArray[option].split("|");
+    var newoption=document.createElement("option");
+
+    newoption.value=pair[0];
+    newoption.innerHTML=pair[0];
+    s2.options.add(newoption);
+  }
+
+}
+
+  </script>
+  
+    <script>
+        $(document).ready(function () {
+            var dtToday = new Date();
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + date.toString();
+            var maxDate = year + '-' + month + '-' + day
+            $('#dateControl').attr('min', maxDate);
+            console.log(dtToday);
+
+        })
+    
+  </script>
+  
+  {% endblock %}
+  
+  {% endblock %}

@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-Profile {% endblock %}
+{% block myeventsactive %}active{% endblock %}
+{% block profile %}active{% endblock %}
+{% block css %}<link href="{% static 'assets/css/myevents.css' %}" rel="stylesheet">{% endblock %}
+
+  {% block content%}
+
+  <main id="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>My Events</li>
+        </ol>
+        <h2>My Events</h2>
+      </div>
+    </section>
+  </main>
+
+<section>
+<div class="container">
+    <div class="row">
+		<div class="col-12">
+			<!-- Page title -->
+			<div class="my">
+				<h3>My Booked Events</h3>
+				<hr>
+			</div>
+
+			
+				<div class="row mb-0 gx-5">
+					<div class="col-xxl-8 mb-5 mb-xxl-0">
+						<div class="bg-secondary-soft px-4 py-5 rounded">
+							
+							{% for Book in event_list %}
+							<div class="row g-2" style="border: 2px solid black;padding-bottom: 25px;"><br>
+								<h4 class="mb-4 mt-0">Event-{{Book.event}} on {{Book.doe}}</h4>
+								<div class="col-md-6">
+									<label class="form-label">Name *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="First name" value="{{Book.name}}" disabled>
+								</div>
+								
+								<div class="col-md-6">
+									<label for="inputEmail4" class="form-label">Email *</label>
+									<input type="email" class="form-control" id="inputEmail4" value="{{Book.email}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Age *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Last name" value="{{Book.age}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Phone number *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.phone}}" disabled>
+								</div>
+		
+								<div class="col-md-6">
+									<label class="form-label">Gender *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.gender}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">State *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.state}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">City *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.city}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Event Type *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.event}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Venue-Type *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.venues}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Ac or Non-Ac *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.acnonac}}" disabled>
+								</div>
+								
+								<div class="col-md-6">
+									<label class="form-label">Music *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.music}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Decoration Type *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.decorations}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Estimation Members *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.estimation}}" disabled>
+								</div>
+								
+								<div class="col-md-6">
+									<label class="form-label">Food *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.food}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Plate *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.plate}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Date of Event *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.doe}}" disabled>
+								</div>
+
+								<div class="col-md-6">
+									<label class="form-label">Status *</label>
+									<input type="text" class="form-control" placeholder="" aria-label="Phone number" value="{{Book.status}}" disabled>
+								</div>
+
+								<div class="col-md-6"><br>
+									{% if Book.status == "Pending" %}
+									<span style="padding-left: 60px;"><button class="btn btn-primary profile-button"><a style="color: white;" href="{% url 'delete' pk=Book.id %}" role="button">Delete</a></button></span>
+									{% else %}
+									<span style="padding-left: 60px;"><button class="btn btn-primary profile-button"><a style="color: white;" href="" role="button">Paynow-253 *</a></button></span>
+									{% endif %}
+									
+								</div>
+
+								
+							</div> <br><br>
+							
+							{% endfor %}
+						</div>
+					</div>
+					
+                </div>
+				{% if event_list.has_other_pages %}
+						<h3><ul class="pagination">
+							{% if event_list.has_previous %}
+							<li><a href="?page={{ event_list.previous_page_number }}">&laquo;</a></li>
+							{% else %}
+							<li class="disabled"><span>&laquo;</span></li>
+							{% endif %}
+							{% for i in event_list.paginator.page_range %}
+							{% if event_list.number == i %}
+							<li class="active"><span>&nbsp;{{ i }}<span class="sr-only">(current)&nbsp;</span></span></li>
+							{% else %}
+							<li><a href="?page={{ i }}">{{ i }}</a></li>
+							{% endif %}
+							{% endfor %}
+							{% if event_list.has_next %}
+							<li><a href="?page={{ event_list.next_page_number }}">&raquo;</a></li>
+							{% else %}
+							<li class="disabled"><span>&raquo;</span></li>
+							{% endif %}
+						</ul></h3>
+				{% endif %}
+				
+	</div>
+</div>
+</section>
+         
+  {% endblock %}
+
+  
+  

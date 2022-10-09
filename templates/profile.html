@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-Profile {% endblock %}
+{% block profileactive %}active{% endblock %}
+{% block profile %}active{% endblock %}
+{% block css %}
+<link href="{% static 'assets/css/profile.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content%}
+
+<main id="main">
+
+
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <ol>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li>Profile</li>
+      </ol>
+      <h2>Profile</h2>
+    </div>
+  </section>
+
+</main>
+
+
+<section>
+  <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-3 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+            style="height: 300px; height: 300px;" src="{{request.user.Profile.image.url}}" alt="Uploadimage"><span
+            class="font-weight-bold">{{request.user.first_name}}&nbsp;{{request.user.last_name}}</span><span
+            class="text-black-50">{{request.user.email}}</span><span> </span></div>
+
+        {% if request.user.Profile.image.url and request.user.Profile.phone %}
+        
+        {% else %}
+        <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label class="form-label" for="image">Upload image:</label>
+          <input type="file" id="image" name="image" placeholder="image" Required /><br><br>
+          {% endif %}
+      </div>
+
+      <div class="col-md-5 border-right">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-right">My Profile Page</h4>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-12"><label class="labels">Username</label><input type="text" class="form-control" placeholder="username" name="username" value="{{request.user.username}} " disabled></div>
+            <div class="col-md-6"><label class="labels">First Name</label><input type="text" class="form-control"
+                name="first_name" value="{{request.user.first_name}}" placeholder="fistname" disabled></div>
+            <div class="col-md-6"><label class="labels">Last Name</label><input type="text" class="form-control"
+                name="last_name" value="{{request.user.last_name}}" placeholder="surname" disabled></div>
+          </div>
+
+          <div class="row mt-3">
+
+            {% if request.user.Profile.phone %}
+            <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control"
+                placeholder="enter phone number" name="phone" value="{{request.user.Profile.phone}}" disabled></div>
+            {% else %}
+            <div class="col-md-12"><label class="labels">PhoneNumber</label><input type="text" class="form-control"
+                placeholder="enter phone number" name="phone" Required></div>
+            {% endif %}
+            <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control"
+                placeholder="enter email id" name="email" value="{{request.user.email}}" disabled></div>
+
+          </div>
+
+          {% if request.user.Profile.phone %}
+
+          <!-- Button trigger modal -->
+          <div class="mt-5 text-center"><button class="btn btn-primary profile-button" ><a style="color: white;" href="" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit profile</a></button></div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Update Data</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                    <div class="col-lg-8 push-lg-4 personal-info">
+
+                         <form method="post" action="{% url 'edit_profile' %}" enctype="multipart/form-data">
+                          {% csrf_token %}
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label" for="id_first_name">First Name*</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="{{request.user.first_name}}" name="first_name" id="id_first_name" Required />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Last Name*</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="{{request.user.last_name}}" name="last_name" Required/>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label class="col-lg-3 col-form-label form-control-label">Email*</label>
+                              <div class="col-lg-9">
+                                  <input class="form-control" type="email" value="{{request.user.email}}" name="email" Required />
+                              </div>
+                          </div>
+                          <br>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label">Phone*</label>
+                                <div class="col-lg-9">
+                                    <input class="form-control" type="text" value="{{request.user.Profile.phone}}" name="phone" Required />
+                                </div>
+                            </div>
+                            <br>
+
+                            <div class="col-lg-4 pull-lg-8 text-xs-center">
+                              <label class="custom-file">
+                                <input type="file" id="image" class="custom-file-input" name="image">
+                                <span class="custom-file-control">Upload photo</span>
+                              </label>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label form-control-label"></label>
+                                <div class="col-lg-9">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+            </div>
+                </div>
+      
+              </div>
+            </div>
+          </div>
+
+          {% else %}
+          <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+          {% endif %}
+          </form>
+
+          <p class="text-center text-muted mt-4 mb-0">Change password..!! <a href="{% url 'password_change' %}">Change
+              password</a></p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+{% endblock %}

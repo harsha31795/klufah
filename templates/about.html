@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}FAHevents-About {% endblock %}
+
+{% if user.is_authenticated %}
+{% block mainactive %}active{% endblock %}
+{% else %}
+{% block aboutactive %}active{% endblock %}
+{% endif %}
+
+{% block content%}
+  <main id="main">
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li>About Us</li>
+        </ol>
+        <h2>About Us</h2>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'assets/img/events.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <h3>What Does an Event Management Company Do?</h3>
+            <p class="fst-italic">
+              Running a successful event can be a complex and expensive exercise where the planning and management of every detail counts towards its success, which is reason alone to hire a specialist company. With this in mind, these are our top 6 reasons to use a professional event management company
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Creative Ideas.</li>
+              <li><i class="bi bi-check-circle"></i> Save Time and Money.</li>
+              <li><i class="bi bi-check-circle"></i> Access to Technology.</li>
+              <li><i class="bi bi-check-circle"></i> Manage Risk.</li>
+              <li><i class="bi bi-check-circle"></i> Professional Event Delivery.</li>
+              <li><i class="bi bi-check-circle"></i> Manage Your Budget .</li>
+            </ul>
+            <p>
+              he application of project management to the creation and development of large-scale events such as festivals, 
+              conferences, ceremonies, weddings, formal parties, concerts and conventions" which sounds reasonable if a little 
+              long-winded. Putting it more simply event management 
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Happy Clients</strong> Many for Us</p>
+              <a href="{% url 'services' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="242" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Projects</strong> We have done so far</p>
+              <a href="{% url 'gallery' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="965" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hours Of Support</strong>we give support 24/7  </p>
+              <a href="{% url 'contact' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Hard Workers</strong> our Team who work hard</p>
+              <a href="{% url 'team' %}">Find out more &raquo;</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="clients" class="clients">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>OUR Clients</h2>
+          <p style="text-align:justify">Many of the top companies are taken the our pride of our events and they became as our clients by giving Many of the events to conduct on behalf of them and we made it.some of them are given below:</p>
+        </div>
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/1.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/2.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/3.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/4.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/5.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/6.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/7.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/8.jpg' %}" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>A testimonial is a statement from a past customer that describes how a product or service helped them. Testimonials are often written by the business based on specific questions they ask satisfied customers. They usually show impact through before-and-after comparisons or provide specific improvement statistics.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/man.jpg' %}" class="testimonial-img" alt="">
+              <h3>Abdul</h3>
+              <h4>Ceo &amp; IBM Manager</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                I was impressed with your contributions in yesterday’s event . You participated in your group and you gave a masterful presentation that I’ve come to expect from you. You have such an easy, friendly style. 
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4 mt-lg-0">
+              <img src="{% static 'assets/img/testimonials/female1.jpg' %}" class="testimonial-img" alt="">
+              <h3>Harry</h3>
+              <h4>Cisco CEO</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                Your willingness and ability to collaborate of your team done given massive success to event. Thank you for offering up your time to help others do their role better through your performance.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img src="{% static 'assets/img/testimonials/female2.jpg' %}" class="testimonial-img" alt="">
+              <h3>Varsha</h3>
+              <h4>KLU Secretary</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                It has been well organized with a perfect rhythm. I really enjoyed the talks from different continents. Thank you very much for your contribution. Thank you very much for organizing this wonderful conference, it was impressive and left me a very good memory.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+       
+
+          <div class="col-lg-6">
+            <div class="testimonial-item mt-4">
+              <img src="{% static 'assets/img/testimonials/female3.jpg' %}" class="testimonial-img" alt="">
+              <h3>Rosy</h3>
+              <h4>Govt employee</h4>
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                The team couldn’t help but be carried right along. I think you probably gave one of the smoothest, most interesting presentations I have ever heard.Amazing work in a really challenging situation within one week of conducting the event.
+                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+  {% endblock %}
